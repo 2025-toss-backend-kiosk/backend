@@ -24,15 +24,39 @@ repositories {
 }
 
 dependencies {
+    // ★ 서블릿 API와 내장 톰캣을 포함하는 웹 스타터
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Validation API
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Flyway
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-mysql'
+
+    // Lombok
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // DevTools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // MySQL Connector
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testRuntimeOnly  'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.17.1'
+    implementation platform('com.fasterxml.jackson:jackson-bom:2.17.1')
 }
 
 tasks.named('test') {
