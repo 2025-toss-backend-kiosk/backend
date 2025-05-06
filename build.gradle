@@ -24,39 +24,44 @@ repositories {
 }
 
 dependencies {
-    // ★ 서블릿 API와 내장 톰캣을 포함하는 웹 스타터
+    // Spring Boot starters
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
-    // JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-    // Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    // Validation API
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    // Database
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+
     // Flyway
-    implementation 'org.flywaydb:flyway-core'
-    implementation 'org.flywaydb:flyway-mysql'
+    implementation 'org.flywaydb:flyway-core:10.20.1'
+    implementation 'org.flywaydb:flyway-mysql:10.20.1'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    // Swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+    // Util
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation platform('com.fasterxml.jackson:jackson-bom:2.17.1')
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
+
     // DevTools
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-    // MySQL Connector
-    runtimeOnly 'com.mysql:mysql-connector-j'
 
     // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    testRuntimeOnly  'org.junit.platform:junit-platform-launcher'
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
-    implementation 'org.apache.commons:commons-lang3:3.14.0'
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.17.1'
-    implementation platform('com.fasterxml.jackson:jackson-bom:2.17.1')
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
