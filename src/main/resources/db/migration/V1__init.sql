@@ -1,5 +1,3 @@
-/* V1__init.sql – 최초 테이블 & 기본 계정 구조 */
-
 -- 회원 테이블
 CREATE TABLE member (
                         member_id     BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -34,4 +32,3 @@ CREATE TABLE menu_item (
                            base_price INT NOT NULL,
                            is_sold_out BOOLEAN NOT NULL
 );
-
