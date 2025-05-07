@@ -20,6 +20,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .cors() // ✅ CORS 설정
+                .and()
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authz -> authz
@@ -30,7 +32,10 @@ public class SecurityConfig {
                                 "/swagger-resources/**",
                                 "/webjars/**",
                                 "/api/auth/phones",
-                                "/api/auth/phones/verify"
+                                "/api/auth/login",
+                                "/api/auth/join",
+                                "/api/auth/phones/verify",
+                                "/api/menus/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )

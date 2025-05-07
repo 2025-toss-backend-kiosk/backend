@@ -7,13 +7,15 @@ import java.util.UUID;
 public record MenuListResponse(
         UUID menuItemId,
         String name,
-        int basePrice
+        int basePrice,
+        String category
 ) {
     public static MenuListResponse from(MenuItemEntity m) {
         return new MenuListResponse(
                 m.getMenuItemId(),
                 m.getName(),
-                m.getBasePrice()
+                m.getBasePrice(),
+                m.getCategory()
         );
     }
 }

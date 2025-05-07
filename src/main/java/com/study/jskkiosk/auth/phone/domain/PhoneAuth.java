@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Entity
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
 public class PhoneAuth {
@@ -19,10 +19,13 @@ public class PhoneAuth {
     @Column(unique = true, nullable = false)
     private String phone;
 
+    @Column(nullable = false)
     private String code;
 
+    @Column(nullable = false)
     private boolean verified;
 
+    @Column(nullable = false)
     private LocalDateTime expiresAt;
 
     public PhoneAuth(String phone) {

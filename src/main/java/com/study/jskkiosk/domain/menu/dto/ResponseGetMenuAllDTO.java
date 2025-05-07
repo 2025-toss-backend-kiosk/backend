@@ -9,5 +9,5 @@ public record ResponseGetMenuAllDTO(
         UUID menuItemId,
         String name,
         int basePrice,
-        boolean isSoldOut
+        String category
 ) {}
