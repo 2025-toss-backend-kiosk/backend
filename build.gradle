@@ -24,14 +24,41 @@ repositories {
 }
 
 dependencies {
+    // Spring Boot starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-//    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Database
+    implementation 'mysql:mysql-connector-java:8.0.33'
     runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
 
+    // Flyway
+    implementation 'org.flywaydb:flyway-core:10.20.1'
+    implementation 'org.flywaydb:flyway-mysql:10.20.1'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // Swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+    // Util
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation platform('com.fasterxml.jackson:jackson-bom:2.17.1')
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
+
+    // DevTools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
