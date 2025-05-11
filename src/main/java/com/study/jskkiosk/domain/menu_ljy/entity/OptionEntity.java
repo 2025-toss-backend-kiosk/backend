@@ -1,4 +1,4 @@
-package com.study.jskkiosk.domain.menu.entity;
+package com.study.jskkiosk.domain.menu_ljy.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,10 +21,10 @@ public class OptionEntity {
 
     @Id
     @Column(name = "option_id")
-    private UUID optionId;
+    private String optionId;
 
     @Column(name = "group_id", nullable = false)
-    private UUID groupId;
+    private String groupId;
 
     @Column(name = "name", nullable = false)
     private String name;

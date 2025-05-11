@@ -1,9 +1,8 @@
-package com.study.jskkiosk.domain.menu.controller;
+package com.study.jskkiosk.domain.menu_ljy.controller;
 
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuAllDTO;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuDetailDTO;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuOptionDTO;
-import com.study.jskkiosk.domain.menu.service.MenuService;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseGetMenuAllDTO;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseGetMenuDetailDTO;
+import com.study.jskkiosk.domain.menu_ljy.service.MenuService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -20,12 +19,18 @@ import java.util.UUID;
 @Tag(name = "메뉴 API", description = "메뉴 조회 관련 API")
 public class MenuController {
 
-    private MenuService menuService;
+    private final MenuService menuService;
+
+    public MenuController(MenuService menuService) {
+        this.menuService = menuService;
+    }
 
     @Operation(summary = "상품 전체 조회", description = "category 전체 상품의 정보를 조회합니다.")
     @GetMapping("/{category}")
     public ResponseEntity<Map<String, Object>> getAllItem(@PathVariable("category") String category) {
+
         List<ResponseGetMenuAllDTO> items = menuService.getAll(category);
+
         boolean success = !items.isEmpty();
 
         Map<String, Object> responseMap = new HashMap<>();
@@ -37,7 +42,7 @@ public class MenuController {
     }
 
     @Operation(summary = "상품 디테일 조회", description = "itemID로 해당 상품의 정보를 조회합니다.")
-    @GetMapping("/{menuItemId}")
+    @GetMapping("/menu/{menuItemId}")
     public ResponseEntity<Map<String, Object>> getItem(@RequestParam("menuItemId") UUID menuItemId) {
         ResponseGetMenuDetailDTO responseGetMenuDetailDTO = menuService.getDetail(menuItemId);
 

@@ -1,11 +1,11 @@
-package com.study.jskkiosk.domain.menu.service;
+package com.study.jskkiosk.domain.menu_ljy.service;
 
-import com.study.jskkiosk.domain.menu.bean.small.CreateResponseMenuOptionGroupBean;
-import com.study.jskkiosk.domain.menu.entity.OptionEntity;
-import com.study.jskkiosk.domain.menu.entity.OptionGroupEntity;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseOptionGroupDTO;
-import com.study.jskkiosk.domain.menu.repository.OptionGroupRepositoryJPA;
-import com.study.jskkiosk.domain.menu.repository.OptionRepositoryJPA;
+import com.study.jskkiosk.domain.menu_ljy.bean.small.CreateResponseMenuOptionGroupBean;
+import com.study.jskkiosk.domain.menu_ljy.entity.OptionEntity;
+import com.study.jskkiosk.domain.menu_ljy.entity.OptionGroupEntity;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseOptionGroupDTO;
+import com.study.jskkiosk.domain.menu_ljy.repository.OptionGroupRepositoryJPA;
+import com.study.jskkiosk.domain.menu_ljy.repository.OptionRepositoryJPA;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class OptionService {
     private final OptionRepositoryJPA optionRepo;
     private final CreateResponseMenuOptionGroupBean optionGroupBean;
 
-    public List<ResponseOptionGroupDTO> getOptionsByMenuId(UUID menuId) {
+    public List<ResponseOptionGroupDTO> getOptionsByMenuId(String menuId) {
         List<OptionGroupEntity> groups = optionGroupRepo.findAllByMenuItemId(menuId);
 
         return groups.stream()

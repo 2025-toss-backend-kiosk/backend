@@ -1,8 +1,8 @@
-package com.study.jskkiosk.domain.menu.bean.small;
+package com.study.jskkiosk.domain.menu_ljy.bean.small;
 
-import com.study.jskkiosk.domain.menu.entity.MenuItemEntity;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuAllDTO;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuDetailDTO;
+import com.study.jskkiosk.domain.menu_ljy.entity.MenuItemEntity;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseGetMenuAllDTO;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseGetMenuDetailDTO;
 import org.springframework.stereotype.Component;
 
 @Component

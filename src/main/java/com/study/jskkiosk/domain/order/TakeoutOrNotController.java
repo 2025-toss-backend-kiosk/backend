@@ -30,7 +30,7 @@ public class TakeoutOrNotController {
 
         Map<String, Object> responseMap = new HashMap<>();
         responseMap.put("isSuccess", success);
-        responseMap.put("message", success ? "주문 생성 성공!" : "주문 생성 실패..");
+        responseMap.put("message", success ? "주문 유형 선택 성공!" : "주문 유형 선택 실패..");
         responseMap.put("orderId", orderId);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseMap);

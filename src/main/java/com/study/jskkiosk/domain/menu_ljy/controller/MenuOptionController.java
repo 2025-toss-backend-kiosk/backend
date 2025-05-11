@@ -1,7 +1,7 @@
-package com.study.jskkiosk.domain.menu.controller;
+package com.study.jskkiosk.domain.menu_ljy.controller;
 
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseOptionGroupDTO;
-import com.study.jskkiosk.domain.menu.service.OptionService;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseOptionGroupDTO;
+import com.study.jskkiosk.domain.menu_ljy.service.OptionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class MenuOptionController {
     private final OptionService optionService;
 
     @GetMapping("/{menuId}/options")
-    public ResponseEntity<List<ResponseOptionGroupDTO>> getMenuOptions(@PathVariable UUID menuId) {
+    public ResponseEntity<List<ResponseOptionGroupDTO>> getMenuOptions(@PathVariable String menuId) {
         return ResponseEntity.ok(optionService.getOptionsByMenuId(menuId));
     }
 }

@@ -1,13 +1,15 @@
-package com.study.jskkiosk.domain.menu.service;
+package com.study.jskkiosk.domain.menu_ljy.service;
 
-import com.study.jskkiosk.domain.menu.bean.GetMenuAllBean;
-import com.study.jskkiosk.domain.menu.bean.GetMenuDetailBean;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuAllDTO;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseGetMenuDetailDTO;
+import com.study.jskkiosk.domain.menu_ljy.bean.GetMenuAllBean;
+import com.study.jskkiosk.domain.menu_ljy.bean.GetMenuDetailBean;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseGetMenuAllDTO;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseGetMenuDetailDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class MenuService {
 
     private final GetMenuAllBean getMenuAllBean;

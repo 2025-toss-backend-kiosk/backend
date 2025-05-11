@@ -1,9 +1,9 @@
-package com.study.jskkiosk.domain.menu.bean.small;
+package com.study.jskkiosk.domain.menu_ljy.bean.small;
 
-import com.study.jskkiosk.domain.menu.entity.OptionEntity;
-import com.study.jskkiosk.domain.menu.entity.OptionGroupEntity;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseOptionDTO;
-import com.study.jskkiosk.domain.menu.entity.dto.ResponseOptionGroupDTO;
+import com.study.jskkiosk.domain.menu_ljy.entity.OptionEntity;
+import com.study.jskkiosk.domain.menu_ljy.entity.OptionGroupEntity;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseOptionDTO;
+import com.study.jskkiosk.domain.menu_ljy.entity.dto.ResponseOptionGroupDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.study.jskkiosk.domain.menu.entity;
+package com.study.jskkiosk.domain.menu_ljy.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
