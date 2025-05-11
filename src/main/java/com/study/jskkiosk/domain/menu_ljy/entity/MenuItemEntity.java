@@ -31,7 +31,7 @@ public class MenuItemEntity {
     private int basePrice;
 
     @Column(name = "is_sold_out")
-    private boolean isSoldOut;
+    private boolean soldOut;
 
     // ✅ 상품 정보 수정 메서드
     public void updateProduct(String name, Integer basePrice) {
@@ -40,7 +40,8 @@ public class MenuItemEntity {
     }
 
     // ✅ 재고 품절 상태 수정 메서드
-    public void updateStock(boolean isSoldOut) {
-        this.isSoldOut = isSoldOut;
+    public void updateStock(boolean soldOut) {
+        this.soldOut = soldOut;
     }
+
 }

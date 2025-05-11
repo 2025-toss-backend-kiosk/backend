@@ -15,5 +15,5 @@ public class CreateProductDTO {
     private UUID categoryId;
     private String name;
     private int basePrice;
-    private boolean isSoldOut;
+    private boolean soldOut;
 }
