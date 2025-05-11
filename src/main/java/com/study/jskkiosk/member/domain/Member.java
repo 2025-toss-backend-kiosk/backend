@@ -33,4 +33,12 @@ public class Member {
         if (dto.points() != null) this.points = dto.points();
         if (dto.stamps() != null) this.stamps = dto.stamps();
     }
+
+    public void addPoints(int amount) {
+        this.points += amount;
+    }
+
+    public void usePoints(int amount) {
+        this.points -= amount;
+    }
 }

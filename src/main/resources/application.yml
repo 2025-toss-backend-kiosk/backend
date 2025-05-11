@@ -6,6 +6,20 @@ spring:
     url: jdbc:mysql://localhost:3306/cafe?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul
     username: cafeuser
     password: cafepw
+# <<<<<<< admin-ljy
+
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#       temp:
+#         use_jdbc_metadata_defaults: false
+#     properties:
+#       hibernate:
+#         format_sql: true
+#         show_sql: true
+#         dialect: org.hibernate.dialect.MySQLDialect
+
+# =======
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -37,3 +51,4 @@ springdoc:
     path: /swagger-ui.html
     tagsSorter: alpha
     operationsSorter: method
+
